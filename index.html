@@ -1,17 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эстедент - Стоматологическая клиника в Астрахани</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* [Весь CSS код остается без изменений] */
         * {
             margin: 0;
             padding: 0;
@@ -35,12 +32,984 @@
             background-color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
         }
         
-        /* [Остальной CSS код остается без изменений] */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
         
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 35px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), 
+                        url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 90px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .hero-content h1 {
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: var(--secondary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 20px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-map {
+            background-color: #2b579a;
+            border-color: #2b579a;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-map:hover {
+            background-color: #1e3a6e;
+            border-color: #1e3a6e;
+        }
+        
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            border: 2px solid #e0e0e0;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .float-1 {
+            top: 15%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+        
+        .float-2 {
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 2s;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .float-3 {
+            bottom: 10%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+        
+        .floating-element i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Technologies Section */
+        .tech-section {
+            background-color: var(--gray-color);
+            position: relative;
+        }
+        
+        .tech-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        
+        .tech-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .tech-visual {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* ИСПРАВЛЕННОЕ КОЛЕСО - правильное расположение */
+        .tech-circle-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .tech-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 10px solid var(--gray-color);
+            z-index: 2;
+        }
+        
+        .tech-circle-inner {
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent-color);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* ИСПРАВЛЕННЫЕ ЭЛЕМЕНТЫ ВОКРУГ КОЛЕСА - ПРОСТАЯ ВЕРСИЯ */
+        .orbit-ring {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .tech-item {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            border: 2px solid #e0e0e0;
+            z-index: 3;
+        }
+        
+        /* Простое размещение по кругу */
+        .tech-item.item-1 {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .tech-item.item-2 {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        
+        .tech-item.item-3 {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .tech-item.item-4 {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        
+        /* Анимация вращения колеса */
+        .tech-circle-container {
+            animation: rotateCircle 40s linear infinite;
+        }
+        
+        @keyframes rotateCircle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Services with Prices */
+        .services-section {
+            background-color: white;
+        }
+        
+        .services-category {
+            margin-bottom: 80px;
+        }
+        
+        .services-category h3 {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-content p {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .service-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .duration {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+        
+        /* Clinic Photos Section */
+        .photos-section {
+            background-color: var(--gray-color);
+        }
+        
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .photo-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .photo-caption {
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: var(--gray-color);
+            border-radius: var(--border-radius);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .stat-box span {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Contact & Form */
+        .contact-section {
+            background-color: var(--gray-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background-color: white;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-dark {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            width: 100%;
+            padding: 18px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-dark:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Telegram Info */
+        .telegram-info {
+            background-color: rgba(102, 102, 102, 0.1);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .telegram-info h5 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1100px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .tech-circle-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .tech-circle {
+                width: 170px;
+                height: 170px;
+            }
+            
+            .tech-item {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                padding: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 120px 0;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 20px;
+                display: block;
+            }
+            
+            .tech-container {
+                flex-direction: column;
+            }
+            
+            .tech-visual {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero-content {
+                padding: 30px;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+            
+            .services-grid, .photos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-circle-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .tech-circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .tech-item {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .tech-circle-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .tech-circle {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .tech-circle-inner {
+                font-size: 2.5rem;
+            }
+            
+            .tech-item {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,11 +1017,12 @@
     <header>
         <div class="container header-container">
             <a href="#home" class="logo">
+                <!-- Ваш логотип -->
                 <img src="images/logo.png" alt="Эстедент" class="logo-img">
                 <div class="logo-text">Эсте<span>дент</span></div>
             </a>
             
-            <button class="mobile-menu-btn" aria-label="Меню">
+            <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
             
@@ -74,30 +1044,539 @@
             <div class="hero-content">
                 <h1>Стоматологическая клиника "Эстедент" в Астрахани</h1>
                 <p>Современные технологии, индивидуальный подход и доступные цены. Забота о вашей улыбке — наша профессия.</p>
-                <div class="hero-buttons">
+                <div>
                     <a href="#contact" class="btn">Записаться на прием</a>
                     <a href="#services" class="btn btn-outline">Услуги и цены</a>
                 </div>
             </div>
         </div>
+        
+        <!-- Floating elements -->
+        <div class="floating-element float-1">
+            <i class="fas fa-tooth"></i>
+        </div>
+        <div class="floating-element float-2">
+            <i class="fas fa-smile"></i>
+        </div>
+        <div class="floating-element float-3">
+            <i class="fas fa-stethoscope"></i>
+        </div>
     </section>
 
-    <!-- [Остальной HTML код остается без изменений] -->
-    
+    <!-- Services with Prices Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Услуги и цены</h2>
+                <p>Мы предлагаем полный спектр стоматологических услуг по доступным ценам</p>
+            </div>
+            
+            <!-- Рентгенологические исследования -->
+            <div class="services-category">
+                <h3>Рентгенологические исследования</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Прицельная рентгенография">
+                        </div>
+                        <div class="service-content">
+                            <h4>Прицельная внутриротовая контактная рентгенография</h4>
+                            <p>Высокая детализация исследуемого зуба, диагностика кариеса, оценка состояния зуба, диагностика травм зуба, контроль лечения зуба.</p>
+                            <div class="service-price">
+                                <div class="price">400 ₽</div>
+                                <div class="duration">1 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Компьютерная томография">
+                        </div>
+                        <div class="service-content">
+                            <h4>Компьютерная томография челюстно-лицевой области</h4>
+                            <p>Получение точной трехмерной информации о костных структурах, зубах, мягких тканях, нервах и анатомических образованиях для сложной диагностики, планирования и контроля лечения.</p>
+                            <div class="service-price">
+                                <div class="price">2700 ₽</div>
+                                <div class="duration">15 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ортопантомография">
+                        </div>
+                        <div class="service-content">
+                            <h4>Ортопантомография (панорамный снимок)</h4>
+                            <p>Комплексная диагностика в стоматологии, оценка состояния всех зубов одновременно, диагностика воспаления мягких тканей, планирование удаления зубов.</p>
+                            <div class="service-price">
+                                <div class="price">1000 ₽</div>
+                                <div class="duration">15 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Терапия -->
+            <div class="services-category">
+                <h3>Терапия</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Реставрация зуба">
+                        </div>
+                        <div class="service-content">
+                            <h4>Реставрация 1 зуба</h4>
+                            <p>Восстановление формы и функции зуба с использованием современных композитных материалов.</p>
+                            <div class="service-price">
+                                <div class="price">8500 ₽</div>
+                                <div class="duration">индивидуально</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h4>Лечение среднего кариеса</h4>
+                            <p>Лечение кариеса с поражением дентина с установкой пломбы.</p>
+                            <div class="service-price">
+                                <div class="price">4800 ₽</div>
+                                <div class="duration">60 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h4>Лечение глубокого кариеса</h4>
+                            <p>Лечение кариеса с глубоким поражением, близким к пульпе зуба.</p>
+                            <div class="service-price">
+                                <div class="price">6500 ₽</div>
+                                <div class="duration">60 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Хирургия -->
+            <div class="services-category">
+                <h3>Хирургия</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782c3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Удаление зуба">
+                        </div>
+                        <div class="service-content">
+                            <h4>Удаление зуба</h4>
+                            <p>Удаление зуба с использованием современных анестетиков и методик для минимизации дискомфорта.</p>
+                            <div class="service-price">
+                                <div class="price">4500 ₽</div>
+                                <div class="duration">40 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h4>Операция "синус-лифтинг"</h4>
+                            <p>Хирургическая процедура по увеличению объема костной ткани верхней челюсти для установки имплантатов.</p>
+                            <div class="service-price">
+                                <div class="price">16000 ₽</div>
+                                <div class="duration">60 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Имплантация">
+                        </div>
+                        <div class="service-content">
+                            <h4>Установка одного имплантата</h4>
+                            <p>В клинике "Эстедент" имплантация зубов проводится современными системами AnyOne (Южная Корея), Impro Light (Германия).</p>
+                            <div class="service-price">
+                                <div class="price">34000 ₽</div>
+                                <div class="duration">80 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Профилактика и профессиональная гигиена -->
+            <div class="services-category">
+                <h3>Профилактика и профессиональная гигиена</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Профессиональная гигиена">
+                        </div>
+                        <div class="service-content">
+                            <h4>Профессиональная гигиена полости рта и зубов</h4>
+                            <p>Комплекс мероприятий, направленный на обработку полости рта от мягкого, пигментированного и твердого зубного налета. Включает индикацию налёта, Airflow, ультразвуковую гигиену.</p>
+                            <div class="service-price">
+                                <div class="price">4000 ₽</div>
+                                <div class="duration">45 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Отбеливание зубов">
+                        </div>
+                        <div class="service-content">
+                            <h4>Профессиональное отбеливание зубов "Opalescence" 1 зуб</h4>
+                            <p>Отбеливание зубов с использованием системы Opalescence позволяет осветлить эмаль зубов с помощью специальных гелей, разработанных американской компанией Ultradent.</p>
+                            <div class="service-price">
+                                <div class="price">800 ₽</div>
+                                <div class="duration">60 мин</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Технологии</h2>
+                <p>Мы используем передовое оборудование и цифровые технологии для обеспечения высочайшего качества лечения</p>
+            </div>
+            
+            <div class="tech-container">
+                <div class="tech-content">
+                    <h3>Цифровая стоматология будущего</h3>
+                    <p>Наша клиника оснащена самым современным оборудованием, которое позволяет проводить лечение с максимальной точностью и комфортом для пациента.</p>
+                    <ul style="margin-top: 25px; padding-left: 20px;">
+                        <li style="margin-bottom: 12px; font-weight: 600;">3D-сканирование и планирование лечения</li>
+                        <li style="margin-bottom: 12px; font-weight: 600;">CAD/CAM технологии для изготовления реставраций</li>
+                        <li style="margin-bottom: 12px; font-weight: 600;">Диодный лазер для безболезненных процедур</li>
+                        <li style="margin-bottom: 12px; font-weight: 600;">Интраоральные камеры для детальной диагностики</li>
+                        <li style="margin-bottom: 12px; font-weight: 600;">Цифровой слепок вместо традиционных оттисков</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="margin-top: 35px;">Записаться на диагностику</a>
+                </div>
+                
+                <div class="tech-visual">
+                    <!-- ИСПРАВЛЕННОЕ КОЛЕСО С ТЕХНОЛОГИЯМИ -->
+                    <div class="tech-circle-container">
+                        <div class="tech-circle">
+                            <div class="tech-circle-inner">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-item item-1">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="tech-item item-2">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="tech-item item-3">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <div class="tech-item item-4">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Photos Section -->
+    <section id="photos" class="photos-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наша клиника</h2>
+                <p>Современный интерьер, комфортные условия и новейшее оборудование для вашего удобства</p>
+            </div>
+            
+            <div class="photos-grid">
+                <div class="photo-card">
+                    <!-- Ваше фото клиники 1 -->
+                    <img src="images/clinic-1.jpg" alt="Интерьер клиники Эстедент">
+                    <div class="photo-caption">Современный приемный зал</div>
+                </div>
+                
+                <div class="photo-card">
+                    <!-- Ваше фото клиники 2 -->
+                    <img src="images/clinic-2.jpg" alt="Кабинет стоматолога">
+                    <div class="photo-caption">Оборудованный кабинет стоматолога</div>
+                </div>
+                
+                <div class="photo-card">
+                    <!-- Ваше фото клиники 3 -->
+                    <img src="images/clinic-3.jpg" alt="Стоматологическое оборудование">
+                    <div class="photo-caption">Новейшее оборудование для диагностики</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для записи на консультацию или получения дополнительной информации</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    <p>Мы находимся в центре Астрахани и готовы помочь вам обрести здоровую и красивую улыбку.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Адрес</h4>
+                            <p>Адмиралтейская ул., 4, Астрахань, этаж 1</p>
+                            <a href="https://yandex.ru/maps/37/astrahan/?ll=48.024989%2C46.345345&mode=poi&poi%5Bpoint%5D=48.024339%2C46.345420&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D124919401740&z=19" 
+                               target="_blank" class="btn btn-map">
+                                <i class="fas fa-map-marked-alt"></i> Открыть в 2ГИС
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Телефон</h4>
+                            <p>+7 (927) 553-07-47</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Режим работы</h4>
+                            <p>Пн-Пт: 9:00-21:00<br>Сб-Вс: 10:00-18:00</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Telegram Bot Info -->
+                    <div class="telegram-info">
+                        <h5>Отправка заявок в Telegram</h5>
+                        <p>Все заявки с сайта автоматически отправляются в наш Telegram-бот для быстрой обработки. Мы свяжемся с вами в течение 30 минут в рабочее время.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Записаться на прием</h3>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Услуга</label>
+                            <select id="service">
+                                <option value="">Выберите услугу</option>
+                                <option value="consultation">Консультация</option>
+                                <option value="xray">Рентгенологические исследования</option>
+                                <option value="therapy">Терапия</option>
+                                <option value="surgery">Хирургия</option>
+                                <option value="hygiene">Профессиональная гигиена</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" placeholder="Дополнительная информация или пожелания"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-dark">Отправить заявку в Telegram</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="footer-logo">Эсте<span>дент</span></div>
+                    <p>Современная стоматологическая клиника в Астрахани. Забота о вашей улыбке — наша профессия.</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="https://yandex.ru/maps/37/astrahan/?ll=48.024989%2C46.345345&mode=poi&poi%5Bpoint%5D=48.024339%2C46.345420&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D124919401740&z=19" 
+                           target="_blank" title="2ГИС">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Услуги и цены</a></li>
+                        <li><a href="#tech">Технологии</a></li>
+                        <li><a href="#photos">Наша клиника</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Рентгенологические исследования</a></li>
+                        <li><a href="#services">Терапия</a></li>
+                        <li><a href="#services">Хирургия</a></li>
+                        <li><a href="#services">Профессиональная гигиена</a></li>
+                        <li><a href="#services">Отбеливание зубов</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Адмиралтейская ул., 4, Астрахань</li>
+                        <li><i class="fas fa-phone" style="margin-right: 8px;"></i> +7 (927) 553-07-47</li>
+                        <li><i class="fas fa-clock" style="margin-right: 8px;"></i> Пн-Пт: 9:00-21:00</li>
+                        <li><i class="fas fa-clock" style="margin-right: 8px;"></i> Сб-Вс: 10:00-18:00</li>
+                        <li>
+                            <a href="https://yandex.ru/maps/37/astrahan/?ll=48.024989%2C46.345345&mode=poi&poi%5Bpoint%5D=48.024339%2C46.345420&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D124919401740&z=19" 
+                               target="_blank" style="color: rgba(255, 255, 255, 0.8);">
+                                <i class="fas fa-map-marked-alt" style="margin-right: 8px;"></i> Открыть в 2ГИС
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Стоматологическая клиника "Эстедент". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // [Весь JavaScript код остается без изменений]
         // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('nav ul');
-        const body = document.querySelector('body');
-        
-        mobileMenuBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            this.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
         });
         
-        // [Остальной JavaScript код]
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission to Telegram bot
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // For demo purposes - show success message
+            alert(`Заявка отправлена в Telegram!\n\nИмя: ${name}\nТелефон: ${phone}\nУслуга: ${service || 'Не указана'}\n\nМы свяжемся с вами в течение 30 минут!`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .tech-content, .photo-card, .contact-form');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .tech-content, .photo-card, .contact-form').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Trigger animation on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Колесо теперь работает - вращается весь контейнер
+        console.log("Колесо технологий готово к работе!");
     </script>
 </body>
 </html>
